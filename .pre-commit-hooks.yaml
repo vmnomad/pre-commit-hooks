@@ -15,6 +15,17 @@
   language: system
   pass_filenames: false
 
+- id: terraform-validate
+  name: Terraform validate
+  description: Validates all Terraform configuration files
+  entry: hooks/terraform-validate.sh
+  language: script
+  files: \.tf$
+  exclude: \.+.terraform\/.*$
+  require_serial: true
+
+
+
 
   # - repo: https://github.com/terraform-docs/terraform-docs
   #   rev: "v0.19.0" # Get the latest from: https://github.com/terraform-docs/terraform-docs/releases
